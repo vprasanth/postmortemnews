@@ -78,7 +78,7 @@ class PostmortemApp extends React.Component {
             <span role="img" aria-label="crap">
               💩
             </span>{" "}
-            is by <a href="https://vprasanth.com">prasanthv</a>
+            is by <a href="https://github.com/vprasanth/postmortemnews">vprasanth.</a>
           </p>
         </footer>
       </div>

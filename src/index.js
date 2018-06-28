@@ -15,12 +15,18 @@ class PostmortemApp extends React.Component {
 
   constructUrl(page) {
     if (!page) page = 0;
-    const url = `https://hn.algolia.com/api/v1/search?query=postmortem&page=${page}`;
+    const url = `https://uj5wyc0l7x-dsn.algolia.net/1/indexes/Item_production_sort_date?query=postmortem&page=${page}&filters=story`;
     return url;
   }
 
   fetch(page) {
-    fetch(this.constructUrl(page))
+    const options = {
+      headers: {
+        "x-algolia-api-key": "8ece23f8eb07cd25d40262a1764599b1",
+        "x-algolia-application-id": "UJ5WYC0L7X"
+      }
+    };
+    fetch(this.constructUrl(page), options)
       .then(res => {
         return res.json();
       })
@@ -78,7 +84,8 @@ class PostmortemApp extends React.Component {
             <span role="img" aria-label="crap">
               💩
             </span>{" "}
-            is by <a href="https://github.com/vprasanth/postmortemnews">vprasanth.</a>
+            is by{" "}
+            <a href="https://github.com/vprasanth/postmortemnews">vprasanth.</a>
           </p>
         </footer>
       </div>
